@@ -1,0 +1,36 @@
+{%- comment -%}theme-check-disable{%- endcomment -%}
+
+{%- comment -%}
+	image			image object
+	classes			additional classes
+	attributes		additional element attributes
+{%- endcomment -%}
+
+{%- if image != blank -%}
+	{% liquid
+		assign img_height = image.width | divided_by: image.aspect_ratio | round
+		assign img_preload = preload | default: false
+		assign img_loading = loading | default: 'lazy'
+
+		assign widths = widths | default: '200, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2400, 2800, 3200, 3600, 4000'
+	%}
+
+	{{
+		image
+		| image_url: width: image.width
+		| image_tag:
+			class: classes,
+			loading: img_loading,
+			preload: img_preload,
+			width: image.width,
+			height: img_height,
+			sizes: sizes,
+			widths: widths,
+			alt: image.alt
+		| escape
+	}}
+{%- else -%}
+	{{ 'image' | placeholder_svg_tag }}
+{%- endif -%}
+
+{%- comment -%}theme-check-enable{%- endcomment -%}

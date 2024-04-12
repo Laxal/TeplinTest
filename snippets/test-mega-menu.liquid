@@ -1,0 +1,50 @@
+<nav class="main-navigation">
+  <ul class="main-navigation__parent-list" role="list">
+    {% for link in section.settings.menu.links %}
+      <li class="main-navigation__parent-link-container">
+        <a class="main-navigation__parent-link {% if link.child_active or link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links != blank %}
+          <div class="main-navigation__mega-menu-wrapper">
+            <div class="main-navigation__mega-menu page-width">
+            {% for childlink in link.links %}
+              <ul class="main-navigation__child-menu-list">
+                {% if childlink.links != blank %}
+                  <li class="main-navigation__child-link-container">
+                    <h3 class="main-navigation__child-link">{{ childlink.title }}</h3>
+                  </li>
+                  {% assign grandchildSorted = childlink.links | sort_natural: "title" %}
+                  {% for grandchildlink in grandchildSorted %}
+                    <li class="main-navigation__grandchild-link-container">
+                      <a class="main-navigation__grandchild-link" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
+                    </li>
+                  {% endfor %}
+                  <li class="main-navigation__shop-all-container">
+                    <a class="main-navigation__grandchild-link main-navigation__grandchild-link--italic" href="{{ childlink.url }}">{{ "sections.header.shop_all" | t }}</a>
+                  </li>
+                {%- else -%}
+                  <li class="main-navigation__child-link-container">
+                    <a class="main-navigation__child-link" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endfor %}
+            {% for block in section.blocks %}
+              {% if block.type == "mega-menu" %}
+                {% assign blockTitleHandle = block.settings.title | handleize %}
+                {% assign linkTitleHandle = link.title | handleize %}
+                {% if blockTitleHandle == linkTitleHandle %}
+                  <div class="main-navigation__promo">
+                    <a href="{{ block.settings.link }}" class="main-navigation__promo-link image-wrapper">
+                      {% render 'media', image: block.settings.image %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
