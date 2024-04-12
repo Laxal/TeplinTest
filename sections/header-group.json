@@ -28,10 +28,23 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_cPizBw": {
+          "type": "mega-menu",
+          "settings": {
+            "title": "Collections",
+            "image": "shopify:\/\/shop_images\/teplin.svg",
+            "link": "https:\/\/teplin.agency\/"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_cPizBw"
+      ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu": "test-menu",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",

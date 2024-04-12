@@ -274,7 +274,8 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
-      }
+      },
+      "shop_all": "Shop All"
     },
     "cart": {
       "title": "Your cart",

@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 {%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
+  <link rel="stylesheet" href="{{ 'component-test-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'component-test-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 
 {%- if settings.cart_type == "drawer" -%}
@@ -200,7 +200,7 @@
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+          render 'test-mega-menu'
         endif
       endif
     %}
@@ -683,6 +683,28 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "mega-menu",
+      "name": "Mega menu promo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Parent link title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "For optimal display, use images with a 3:4 aspect ratio."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Promo link"
+        }
+      ]
     }
   ]
 }
