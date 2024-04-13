@@ -34,7 +34,7 @@
                 {% assign linkTitleHandle = link.title | handleize %}
                 {% if blockTitleHandle == linkTitleHandle %}
                   <div class="main-navigation__promo">
-                    <a href="{{ block.settings.link }}" class="main-navigation__promo-link image-wrapper">
+                    <a href="{{ block.settings.link }}" class="main-navigation__promo-link">
                       {% render 'media', image: block.settings.image %}
                     </a>
                   </div>
