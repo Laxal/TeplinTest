@@ -1,5 +1,53 @@
 {
   "sections": {
+    "featured_products_4jJGVC": {
+      "type": "featured-products",
+      "blocks": {
+        "product_DbnMXU": {
+          "type": "product",
+          "settings": {
+            "product": "cloudburst-gel-hydrator",
+            "rating": 3,
+            "reviews_count": 1
+          }
+        },
+        "product_qQpimL": {
+          "type": "product",
+          "settings": {
+            "product": "sunstone-hair-elixir",
+            "rating": 4,
+            "reviews_count": 15
+          }
+        },
+        "product_84QVFQ": {
+          "type": "product",
+          "settings": {
+            "product": "love-your-body-collection",
+            "rating": 4,
+            "reviews_count": 15
+          }
+        },
+        "product_xqtkgi": {
+          "type": "product",
+          "settings": {
+            "product": "superbloom-palette",
+            "rating": 5,
+            "reviews_count": -16
+          }
+        }
+      },
+      "block_order": [
+        "product_DbnMXU",
+        "product_qQpimL",
+        "product_84QVFQ",
+        "product_xqtkgi"
+      ],
+      "settings": {
+        "title": "Shop the Marketplace",
+        "text": "We go out of our way to source products that are vegan, cruelty-free and free from most common toxins.",
+        "link": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -69,6 +117,7 @@
     }
   },
   "order": [
+    "featured_products_4jJGVC",
     "image_banner",
     "featured_collection"
   ]

@@ -76,6 +76,10 @@
     },
     "loading": "Loading...",
     "total_reviews": "total reviews",
+    "reviews": {
+      "one": "{{ count }} review",
+      "other": "{{ count }} reviews"
+    },
     "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
     "collapsible_content_title": "Collapsible content",
     "complementary_products": "Complementary products"
