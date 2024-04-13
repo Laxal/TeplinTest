@@ -1,0 +1,29 @@
+{%- if rating == 1 -%}
+	{%- render 'icon-star' -%}
+	{%- for i in (1..4) -%}
+		{%- render 'icon-star-empty' -%}
+	{%- endfor -%}
+{%- elsif rating == 2 -%}
+	{%- for i in (1..2) -%}
+		{%- render 'icon-star' -%}
+	{%- endfor -%}
+	{%- for i in (1..3) -%}
+		{%- render 'icon-star-empty' -%}
+	{%- endfor -%}
+{%- elsif rating == 3 -%}
+	{%- for i in (1..3) -%}
+		{%- render 'icon-star' -%}
+	{%- endfor -%}
+	{%- for i in (1..2) -%}
+		{%- render 'icon-star-empty' -%}
+	{%- endfor -%}
+{%- elsif rating == 4 -%}
+	{%- for i in (1..4) -%}
+		{%- render 'icon-star' -%}
+	{%- endfor -%}
+	{%- render 'icon-star-empty' -%}
+{%- else -%}
+	{%- for i in (1..rating) -%}
+		{%- render 'icon-star' -%}
+	{%- endfor -%}
+{%- endif -%}
