@@ -48,6 +48,66 @@
         "link": ""
       }
     },
+    "testimonials_GzghVF": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_f9tzKN": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5838c7e7a978e04c3f252617ec419df7.png",
+            "rating_number": 5,
+            "text": "I'm impressed so far with the cleaning power, as well as the convenience. Of course limited packaging waste is a big win, too!",
+            "name": "Eva M.",
+            "verified_text": "Verified Buyer",
+            "date": "23\/06\/2023"
+          }
+        },
+        "testimonial_bwm8Kt": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2518d918fa3d6691254e0c7d6de71395.jpg",
+            "rating_number": 5,
+            "text": "I'm impressed so far with the cleaning power, as well as the convenience. Of course limited packaging waste is a big win, too!",
+            "name": "Eva M.",
+            "verified_text": "Verified Buyer",
+            "date": "23\/06\/2023"
+          }
+        },
+        "testimonial_APKarb": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fbb70f579f9eb5d51f6e3c40478ba91f.png",
+            "rating_number": 5,
+            "text": "I'm impressed so far with the cleaning power, as well as the convenience. Of course limited packaging waste is a big win, too!",
+            "name": "Eva M.",
+            "verified_text": "Verified Buyer",
+            "date": "23\/06\/2023"
+          }
+        },
+        "testimonial_6f48rq": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/174676c0fb7ba2e03912d36dbfb0c49f.jpg",
+            "rating_number": 5,
+            "text": "I'm impressed so far with the cleaning power, as well as the convenience. Of course limited packaging waste is a big win, too!",
+            "name": "Eva M.",
+            "verified_text": "Verified Buyer",
+            "date": "23\/06\/2023"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_f9tzKN",
+        "testimonial_bwm8Kt",
+        "testimonial_APKarb",
+        "testimonial_6f48rq"
+      ],
+      "settings": {
+        "title": "Why our customers love us",
+        "rating_number": 4.9,
+        "rating_text": "Based on 94 Reviews"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -118,6 +178,7 @@
   },
   "order": [
     "featured_products_4jJGVC",
+    "testimonials_GzghVF",
     "image_banner",
     "featured_collection"
   ]

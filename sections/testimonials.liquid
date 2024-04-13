@@ -1,0 +1,154 @@
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+
+<div class="testimonials__container page-width">
+  {% if section.settings.title != blank %}
+    <h2 class="testimonials__title h1 subtitle-container">{{ section.settings.title }}</h2>
+  {% endif -%}
+  <div class="testimonials__rating subtitle-container">
+    <span class="testimonials__rating-number">{{ section.settings.rating_number }}</span>
+    <div class="testimonials__rating-stars">
+      {% render 'star-rating', rating: section.settings.rating_number %}
+    </div>
+    <span class="testimonials__rating-text">{{ section.settings.rating_text }}</span>
+  </div>
+  <div class="testimonials__slider testimonials__slider--{{ section.id }}">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          {% render 'testimonial-card' with block: block %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="testimonials__slider-button-prev {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon: 'slider-arrow' %}</div>
+  <div class="testimonials__slider-button-next {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon: 'slider-arrow' %}</div>
+</div>
+
+<script>
+  new Swiper('.testimonials__slider--{{ section.id }}', {
+    slidesPerView: 1.264,
+    spaceBetween: 16,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: '.testimonials__slider-button-next',
+      prevEl: '.testimonials__slider-button-prev',
+    },
+
+    breakpoints: {
+      750: {
+        slidesPerView: 2.1,
+        spaceBetween: 24,
+      },
+
+      990: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "class": "testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why our customers love us"
+    },
+    {
+      "type": "range",
+      "id": "rating_number",
+      "min": 3,
+      "max": 5,
+      "step": 0.1,
+      "label": "Rating number",
+      "default": 4.9
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "Based on 94 Reviews"
+    },
+    {
+      "type": "number",
+      "id": "continuous_scroll",
+      "label": "Continuous scroll speed, msec (thousands)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "rating_number",
+          "min": 3,
+          "max": 5,
+          "step": 0.5,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "I'm impressed so far with the cleaning power, as well as the convenience. Of course limited packaging waste is a big win, too!"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Eva M."
+        },
+        {
+          "type": "text",
+          "id": "verified_text",
+          "label": "Verified text",
+          "default": "Verified Buyer"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "23/06/2023",
+          "info": "Format: dd/mm/yyyy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
