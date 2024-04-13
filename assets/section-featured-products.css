@@ -57,6 +57,13 @@
   color: #2B2424;
 }
 
+@media screen and (max-width: 989px) {
+  .featured-products__title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
 .featured-products__text {
   font-size: 18px;
   font-weight: 500;
@@ -85,6 +92,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+}
+
+@media screen and (max-width: 989px) {
+  .featured-products__products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 749px) {
+  .featured-products__products-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .featured-products__product {
