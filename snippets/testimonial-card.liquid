@@ -11,7 +11,7 @@
         <span class="testimonial-card__name">{{ block.settings.name }}</span>
         {% if block.settings.verified_text != blank %}
           <span class="testimonial-card__verified">
-            {% render 'icons-new' with icon: 'verified-icon' %}
+            {% render 'icons-new' with icon, icon: 'verified-icon' %}
             <span>
               {{ block.settings.verified_text }}
             </span>
@@ -23,3 +23,13 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icons-new' with icon: 'verified-icon' %}"
+  to: "{% render 'icons-new' with icon, icon: 'verified-icon' %}"
+  position: 676..733
+{% endcomment %}

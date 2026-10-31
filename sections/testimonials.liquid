@@ -15,14 +15,14 @@
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
         <div class="swiper-slide">
-          {% render 'testimonial-card' with block: block %}
+          {% render 'testimonial-card' with block, block: block %}
         </div>
       {% endfor %}
     </div>
   </div>
 
-  <div class="testimonials__slider-button-prev {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon: 'slider-arrow' %}</div>
-  <div class="testimonials__slider-button-next {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon: 'slider-arrow' %}</div>
+  <div class="testimonials__slider-button-prev {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon, icon: 'slider-arrow' %}</div>
+  <div class="testimonials__slider-button-next {% if section.settings.continuous_scroll %}hidden{% endif %}">{% render 'icons-new' with icon, icon: 'slider-arrow' %}</div>
 </div>
 
 <script>
@@ -152,3 +152,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'testimonial-card' with block: block %}"
+  to: "{% render 'testimonial-card' with block, block: block %}"
+  position: 826..882
+- from: "{% render 'icons-new' with icon: 'slider-arrow' %}"
+  to: "{% render 'icons-new' with icon, icon: 'slider-arrow' %}"
+  position: 1047..1103
+- from: "{% render 'icons-new' with icon: 'slider-arrow' %}"
+  to: "{% render 'icons-new' with icon, icon: 'slider-arrow' %}"
+  position: 1219..1275
+{% endcomment %}
